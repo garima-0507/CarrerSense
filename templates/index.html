@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CareerSense - AI Career Recommendation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>CareerSense</h1>
+    <p class="tagline">AI-Based Career Recommendation System</p>
+
+    <form method="POST">
+        <label>Your Name</label>
+        <input type="text" name="name" placeholder="Garima" required>
+
+        <label>Your Education</label>
+        <input type="text" name="education" placeholder="B.Tech CSIT - 4th Year">
+
+        <label>Your Skills (comma separated)</label>
+        <input type="text" name="skills"
+               placeholder="python, ml, sql, html, css" required>
+
+        <label>Your Interest Domain</label>
+        <select name="interests" required>
+            <option value="ml">Machine Learning</option>
+            <option value="web">Web Development</option>
+            <option value="data">Data Science / Analytics</option>
+            <option value="android">Android Development</option>
+            <option value="cyber">Cyber Security</option>
+            <option value="cloud">Cloud Computing</option>
+        </select>
+
+        <button type="submit">Get Career Suggestions</button>
+    </form>
+
+    <a href="{{ url_for('about') }}" class="link">About CareerSense</a>
+</div>
+</body>
+</html>

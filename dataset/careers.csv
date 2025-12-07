@@ -1,0 +1,13 @@
+skills,interests,education,role
+"python, ml, pandas, numpy","ml","btech","Machine Learning Engineer"
+"python, sql, excel","data","btech","Data Analyst"
+"python, statistics, data","data","bsc","Data Scientist"
+"html, css, javascript","web","btech","Frontend Developer"
+"html, css, javascript, react","web","btech","Frontend Developer"
+"python, html, css, sql","web","btech","Backend Developer"
+"java, android","android","btech","Android Developer"
+"kotlin, android","android","btech","Android Developer"
+"networking, linux, security","cyber","btech","Cybersecurity Analyst"
+"security, linux, firewall","cyber","btech","Cybersecurity Analyst"
+"aws, cloud, docker","cloud","btech","Cloud Engineer"
+"azure, cloud","cloud","btech","Cloud Engineer"

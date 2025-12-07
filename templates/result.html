@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CareerSense Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>CareerSense Recommendations</h1>
+    <p class="tagline">Hi {{ name }}, here are your best-fit roles:</p>
+
+    {% for rec in recommendations %}
+        <div class="card">
+            <h2>{{ rec.role }}</h2>
+            <p>Match Score: <strong>{{ rec.score }}%</strong></p>
+        </div>
+    {% endfor %}
+
+    <div class="small-text">
+        <p><strong>Education:</strong> {{ education }}</p>
+        <p><strong>Skills:</strong> {{ skills }}</p>
+        <p><strong>Interest:</strong> {{ interest }}</p>
+    </div>
+
+    <a href="{{ url_for('index') }}" class="button">Try Again</a>
+</div>
+</body>
+</html>
