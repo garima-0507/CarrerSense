@@ -1,16 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <div class="form-container">
     <h2>Career Test</h2>
 
     <form method="POST">
-        <label>Name</label>
+
+        <label>
+            <img src="{{ url_for('static', filename='icons/user.png') }}" class="label-icon">
+            Name
+        </label>
         <input type="text" name="name" required>
 
-        <label>Your Skills (comma separated)</label>
+        <label>
+            <img src="{{ url_for('static', filename='icons/skills.png') }}" class="label-icon">
+            Your Skills (comma separated)
+        </label>
         <input type="text" name="skills" placeholder="python, html, sql" required>
 
-        <label>Your Interest Domain</label>
+        <label>
+            <img src="{{ url_for('static', filename='icons/interest.png') }}" class="label-icon">
+            Your Interest Domain
+        </label>
         <select name="interests" required>
             <option value="ml">Machine Learning</option>
             <option value="web">Web Development</option>
@@ -19,10 +30,10 @@
             <option value="cyber">Cyber Security</option>
             <option value="cloud">Cloud Computing</option>
         </select>
-        <br> 
-        
+
+        <br><br>        
         <button type="submit" class="btn-primary">Get Recommendations</button>
     </form>
 </div>
-{% endblock %}
 
+{% endblock %}

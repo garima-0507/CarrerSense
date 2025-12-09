@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <div class="hero-full">
     <div class="hero-overlay">
         <h1>Welcome to CareerSense</h1>
@@ -10,16 +11,23 @@
 
 <div class="features">
     <div class="card">
+        <img src="{{ url_for('static', filename='icons/ai.png') }}" class="feature-icon">
         <h3>AI Powered</h3>
         <p>Accurate recommendations using ML model.</p>
     </div>
+
     <div class="card">
+        <img src="{{ url_for('static', filename='icons/user.png') }}" class="feature-icon">
         <h3>Personalized</h3>
         <p>Tailored for your skills & interests.</p>
     </div>
+
     <div class="card">
+        <img src="{{ url_for('static', filename='icons/arrow-right.png') }}" class="feature-icon">
         <h3>Career Roadmaps</h3>
         <p>Know how to reach your goal.</p>
     </div>
 </div>
+
 {% endblock %}
+

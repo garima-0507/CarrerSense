@@ -1,15 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <h2>Your Best Career Matches</h2>
 
 <div class="result-grid">
     {% for rec in recommendations %}
     <div class="result-card">
+
         <h3>{{ rec.role }}</h3>
         <p>Match Score: {{ rec.score }}%</p>
-        <a href="/career/{{ rec.role }}" class="btn-secondary">View Details</a>
+
+        <a href="/career/{{ rec.role }}" class="btn-secondary">
+            View Details
+            <img src="{{ url_for('static', filename='icons/arrow-right.png') }}" class="arrow-icon">
+        </a>
+
     </div>
     {% endfor %}
 </div>
-{% endblock %}
 
+{% endblock %}

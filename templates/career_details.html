@@ -1,27 +1,44 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <div class="detail-container">
+
     <h2>{{ role }}</h2>
+
+    <img src="{{ url_for('static', filename='images/' + role|lower|replace(' ', '') + '.jpg') }}"
+         class="career-img" alt="{{ role }}">
 
     <p class="desc">{{ details.description }}</p>
 
-    <h3>Required Skills</h3>
-    <ul>
-        {% for skill in details.skills %}
-        <li>{{ skill }}</li>
-        {% endfor %}
-    </ul>
+    <div class="detail-sections">
 
-    <h3>Salary Range</h3>
-    <p>{{ details.salary }}</p>
+        <div class="detail-section">
+            <h3>Required Skills</h3>
+            <ul>
+                {% for skill in details.skills %}
+                <li>{{ skill }}</li>
+                {% endfor %}
+            </ul>
+        </div>
 
-    <h3>Roadmap</h3>
-    <ol>
-        {% for step in details.roadmap %}
-        <li>{{ step }}</li>
-        {% endfor %}
-    </ol>
+        <div class="detail-section">
+            <h3>Salary Range</h3>
+            <p>{{ details.salary }}</p>
+        </div>
 
-    <a href="/test" class="btn-secondary">Take Test Again</a>
+        <div class="detail-section">
+            <h3>Roadmap</h3>
+            <ol>
+                {% for step in details.roadmap %}
+                <li>{{ step }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+
+    </div>
+
+    <a href="/test" class="btn-secondary detail-btn">Take Test Again</a>
+
 </div>
+
 {% endblock %}
