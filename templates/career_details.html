@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="detail-container">
+    <h2>{{ role }}</h2>
+
+    <p class="desc">{{ details.description }}</p>
+
+    <h3>Required Skills</h3>
+    <ul>
+        {% for skill in details.skills %}
+        <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Salary Range</h3>
+    <p>{{ details.salary }}</p>
+
+    <h3>Roadmap</h3>
+    <ol>
+        {% for step in details.roadmap %}
+        <li>{{ step }}</li>
+        {% endfor %}
+    </ol>
+
+    <a href="/test" class="btn-secondary">Take Test Again</a>
+</div>
+{% endblock %}

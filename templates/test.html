@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="form-container">
+    <h2>Career Test</h2>
+
+    <form method="POST">
+        <label>Name</label>
+        <input type="text" name="name" required>
+
+        <label>Your Skills (comma separated)</label>
+        <input type="text" name="skills" placeholder="python, html, sql" required>
+
+        <label>Your Interest Domain</label>
+        <select name="interests" required>
+            <option value="ml">Machine Learning</option>
+            <option value="web">Web Development</option>
+            <option value="data">Data Science</option>
+            <option value="android">Android</option>
+            <option value="cyber">Cyber Security</option>
+            <option value="cloud">Cloud Computing</option>
+        </select>
+        <br> 
+        
+        <button type="submit" class="btn-primary">Get Recommendations</button>
+    </form>
+</div>
+{% endblock %}
+

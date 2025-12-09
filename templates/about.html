@@ -1,35 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>About CareerSense</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-<div class="container">
-    <h1>About CareerSense</h1>
-
-    <p class="tagline">
-        CareerSense is an AI-based career recommendation system built using
-        Machine Learning, Python, Flask, HTML, and CSS.
-    </p>
-
-    <p>
-        Users enter their skills, education, and interest domain. The ML model then
-        processes this data and predicts the top 3 most suitable career paths.
-    </p>
-
-    <p>
-        Suggested roles include Machine Learning Engineer, Data Analyst,
-        Web Developer, Cybersecurity Analyst, Android Developer, and Cloud Engineer.
-    </p>
-
-    <p>
-        The system uses Random Forest for classification and custom skill vectorization
-        for better accuracy.
-    </p>
-
-    <a href="{{ url_for('index') }}" class="button">Back to Home</a>
-</div>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+<h2>About CareerSense</h2>
+<p>
+CareerSense is an AI-driven career guidance platform that helps students discover the right career path based on their skills and interests.
+</p>
+<p>
+Built using Machine Learning, Flask, HTML, and CSS.
+</p>
+{% endblock %}

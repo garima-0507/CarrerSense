@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>All Career Paths</h2>
+
+<div class="career-grid">
+    {% for role, details in roles.items() %}
+    <div class="career-card">
+        <h3>{{ role }}</h3>
+        <p>{{ details.description[:100] }}...</p>
+        <a href="/career/{{ role }}" class="btn-secondary">View Details</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

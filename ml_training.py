@@ -4,6 +4,7 @@ import numpy as np
 import pickle
 import os
 
+# ---- SKILL & INTEREST KEYWORDS ----
 SKILL_KEYWORDS = [
     "python", "ml", "pandas", "numpy",
     "sql", "excel", "statistics", "data",
@@ -15,27 +16,35 @@ SKILL_KEYWORDS = [
 
 INTEREST_KEYS = ["ml", "web", "data", "android", "cyber", "cloud"]
 
-# ---- Helper: convert text -> feature vector ----
-def build_features(skills_str: str, interest_str: str) -> list:
+
+# ---- FEATURE BUILDING FUNCTION ----
+def build_features(skills_str, interest_str):
+    """
+    Converts user’s skills + interest into numerical ML features.
+    """
+    # Convert string to list and lowercase
     skills_list = [s.strip().lower() for s in skills_str.split(",")]
 
-    # skill part (binary)
+    # Skill vector (binary)
     skill_vector = [1 if kw in skills_list else 0 for kw in SKILL_KEYWORDS]
 
+    # Interest one-hot encoding
     interest_str = interest_str.strip().lower()
-    # one-hot for interests
     interest_vector = [1 if interest_str == key else 0 for key in INTEREST_KEYS]
 
     return skill_vector + interest_vector
 
 
+# ---- MAIN TRAINING PROCESS ----
 def main():
-    # Load dataset
+    print("Loading dataset...")
+
     df = pd.read_csv("dataset/careers.csv")
 
     X = []
     y = []
 
+    print("Processing rows...")
     for _, row in df.iterrows():
         features = build_features(row["skills"], row["interests"])
         X.append(features)
@@ -43,20 +52,22 @@ def main():
 
     X = np.array(X)
 
-    # Train model
-    model = RandomForestClassifier(n_estimators=100, random_state=42)
+    print("Training RandomForest model...")
+    model = RandomForestClassifier(n_estimators=120, random_state=42)
     model.fit(X, y)
 
-    # Create model directory if not exists
+    # Create model folder if needed
     os.makedirs("model", exist_ok=True)
 
-    # Save model
+    # Save trained model
     with open("model/career_model.pkl", "wb") as f:
         pickle.dump(model, f)
 
-    print("Model trained and saved to model/career_model.pkl")
-    print("Classes:", model.classes_)
+    print("\n🎉 Model trained successfully!")
+    print("📁 Saved as: model/career_model.pkl")
+    print("📌 Classes:", model.classes_)
 
 
+# Run training
 if __name__ == "__main__":
     main()

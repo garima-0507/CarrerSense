@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title if title else 'CareerSense' }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">CareerSense</div>
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/test">Career Test</a></li>
+        <li><a href="/careers">Career Paths</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="content">
+    {% block content %}{% endblock %}
+</div>
+
+<footer>
+    <p>CareerSense © 2025 | Built by Garima</p>
+</footer>
+
+</body>
+</html>
