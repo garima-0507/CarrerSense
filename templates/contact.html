@@ -1,29 +1,36 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h2>Contact Us</h2>
+<div class="contact-banner">
+    <div class="form-on-banner">
 
-<form class="form-container">
+        <h2>Contact Us</h2>
 
-    <label>
-        <img src="{{ url_for('static', filename='icons/user.png') }}" class="label-icon">
-        Name
-    </label>
-    <input type="text">
+        <form>
 
-    <label>
-        <img src="{{ url_for('static', filename='icons/email.png') }}" class="label-icon">
-        Email
-    </label>
-    <input type="email">
+            <label>
+                <img src="{{ url_for('static', filename='icons/user.png') }}" class="label-icon">
+                Name
+            </label>
+            <input type="text">
 
-    <label>
-        <img src="{{ url_for('static', filename='icons/interest.png') }}" class="label-icon">
-        Message
-    </label>
-    <textarea rows="5"></textarea>
+            <label>
+                <img src="{{ url_for('static', filename='icons/email.png') }}" class="label-icon">
+                Email
+            </label>
+            <input type="email">
 
-    <button class="btn-primary">Send Message</button>
-</form>
+            <label>
+                <img src="{{ url_for('static', filename='icons/interest.png') }}" class="label-icon">
+                Message
+            </label>
+            <textarea rows="5"></textarea>
+
+            <button class="btn-primary">Send Message</button>
+
+        </form>
+
+    </div>
+</div>
 
 {% endblock %}
